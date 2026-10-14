@@ -1,19 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<nav class=" p-6 rounded-lg">
-  <div class="container relative flex justify-between items-center mx-auto text-slate-200">
+<nav class="p-6 mx-auto w-full max-w-3xl">
+  <div class="relative flex justify-between items-center text-slate-200">
     <a href="/" ><Icon  name="logo" size={60} /></a>
     <div >
-      <button class="toggle md:hidden">
+      <button class="toggle  md:hidden">
         <span><Icon class="open-icon" name="menu" size={40} /></span>
         <span><Icon class="close-icon hidden" name="menu-close" size={40} /></span>
       </button>
-      <div class="menu hidden absolute top-6 left-1/2 -translate-x-1/2 flex flex-col  gap-6 text-2xl opacity-0 transition-all transition-discrete duration-100 ease-in-out starting:opacity-0 [&:not(.hidden)]:opacity-100 md:flex  md:opacity-100 md:relative md:flex-row ">
-        <a href="/" class="hover:text-blue-500">Home</a>
-        <a href="/projects" class="hover:text-blue-500">About</a>
-        <a href="/blog" class="hover:text-blue-500">Blog</a>
-        <a href="/contact" class="hover:text-blue-500">Contact</a>
+      <div class="menu hidden absolute top-10 right-2 flex flex-col  gap-6 text-2xl  transition-discrete duration-50 ease-in-out  md:flex  md:opacity-100 md:relative md:top-auto md:right-auto md:flex-row ">
+        <a href="/" class="hover:text-blue-700">Home</a>
+        <a href="/projects" class="hover:text-blue-700">About</a>
+        <a href="/blog" class="hover:text-blue-700">Blog</a>
+        <a href="/contact" class="hover:text-blue-700">Contact</a>
       </div>
     </div>
     
