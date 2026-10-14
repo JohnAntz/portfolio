@@ -2,14 +2,14 @@
 import { Icon } from 'astro-icon/components';
 ---
 <nav class="p-6 mx-auto w-full max-w-3xl">
-  <div class="relative flex justify-between items-center text-slate-200">
-    <a href="/" ><Icon  name="logo" size={60} /></a>
+  <div class="relative flex justify-between items-center ">
+    <a href="/" ><Icon  name="logo" size={50} /></a>
     <div >
       <button class="toggle  md:hidden">
         <span><Icon class="open-icon" name="menu" size={40} /></span>
         <span><Icon class="close-icon hidden" name="menu-close" size={40} /></span>
       </button>
-      <div class="menu hidden absolute top-10 right-2 flex flex-col  gap-6 text-2xl  transition-discrete duration-50 ease-in-out  md:flex  md:opacity-100 md:relative md:top-auto md:right-auto md:flex-row ">
+      <div class="menu hidden absolute top-10 right-2 p-6 flex flex-col  gap-6 text-2xl bg-black/85 transition-discrete duration-50 ease-in-out  md:flex  md:relative md:top-auto md:right-auto md:flex-row ">
         <a href="/" class="hover:text-blue-700">Home</a>
         <a href="/projects" class="hover:text-blue-700">About</a>
         <a href="/blog" class="hover:text-blue-700">Blog</a>
