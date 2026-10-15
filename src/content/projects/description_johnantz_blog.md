@@ -1,7 +1,7 @@
 ---
 title: John's Blog
 description: Personal blog oriented towards technology.
-img: ./assets/astro.svg
+img: "/img/johns-blog.png"
 link: https://blog.johnantz.dev/
 ---
 

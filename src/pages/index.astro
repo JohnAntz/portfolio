@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-
 const projects = await getCollection("projects")
+
 ---
 
 <Layout title="Home">
@@ -12,9 +12,25 @@ const projects = await getCollection("projects")
 		<h1 class="text-4xl md:text-7xl">John Antzoulis</h1>
 		<p class=" text-sm md:text-xl">Full-stack web developer based in Spain</p>		
 	</section>
-	<section >
-		<h2 class="">Tech stack</h2>
-		<div></div>
+	<section class="flex flex-col items-center">
+		<h1>Selected work</h1>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 justify-items-center">
+			{
+				projects.map(project => {
+					const { id, data } = project
+					const { title, description, img, link } = data
+						return (
+						<div class="bg-linear-to-b from-blue-700 rounded-3xl to-transparent p-0.5 w-3/4">
+							<div class="bg-slate-950 p-5 rounded-[calc(1.5rem_-_0.125rem)] flex flex-col items-left justify-center ">
+                            	<img src={img} alt={title} class="h-40 object-cover rounded-xl"/>
+					    		<h3>{title}</h3>
+					    		<p>{description}</p>
+                        	</div>
+						</div>
+					)
+				})
+			}
+		</div>
 	</section>
 </main>
 </Layout>
