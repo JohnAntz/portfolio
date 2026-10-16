@@ -14,15 +14,15 @@ const projects = await getCollection("projects")
 	</section>
 	<section class="flex flex-col items-center">
 		<h1>Selected work</h1>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 justify-items-center">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-10 p-5 justify-items-center">
 			{
 				projects.map(project => {
 					const { id, data } = project
 					const { title, description, img, link } = data
 						return (
-						<div class="bg-linear-to-b from-blue-700 rounded-3xl to-transparent p-0.5 w-3/4">
+						<div class="bg-linear-to-r from-blue-700 from-15% via-transparent via-50% to-transparent to-85%  rounded-3xl p-0.5 shadow-[0_0_10px_4px_#1447e6]/30 max-w-sm ">
 							<div class="bg-slate-950 p-5 rounded-[calc(1.5rem_-_0.125rem)] flex flex-col items-left justify-center ">
-                            	<img src={img} alt={title} class="h-40 object-cover rounded-xl"/>
+                            	<img src={img} alt={title} class=" w-auto  object-cover rounded-lg"/>
 					    		<h3>{title}</h3>
 					    		<p>{description}</p>
                         	</div>
