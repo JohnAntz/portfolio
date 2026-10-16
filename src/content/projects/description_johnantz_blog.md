@@ -1,11 +1,12 @@
 ---
-title: Personal blog.
+title: Personal blog
 description: Space to share my programming and everyday technology user experience with the world.
 img: "/img/johns-blog.png"
 link: https://blog.johnantz.dev/
 technologies:
   - astro
   - npm
+  - markdown
 ---
 
 # Description of John's Blog
