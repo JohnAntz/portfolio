@@ -1,6 +1,6 @@
 ---
-title: John's Blog
-description: Personal blog oriented towards technology.
+title: Personal blog.
+description: Space to share my programming and everyday technology user experience with the world.
 img: "/img/johns-blog.png"
 link: https://blog.johnantz.dev/
 ---
