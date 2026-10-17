@@ -24,4 +24,4 @@ It's built using a combination of the included **Gutenberg** editor, **HTML**, *
 
 The main challenge I faced was the unfamiliarity with the block editor Wordpress uses by default. To be honest I still find it clumsy and unintuitive sometimes, but once I got the hang of it wasn't so hard to work with it.
 
-I learned a lot about PHP and how the Wordpress API works. Combining both native Wordpress blocks and custom HTML elements that interact directly with said API.
+I learned a lot about PHP and how the Wordpress API works, combining both native Wordpress blocks and custom HTML elements that interact directly with said API.
