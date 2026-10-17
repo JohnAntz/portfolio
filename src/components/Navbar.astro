@@ -1,11 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<nav class="p-6 mx-auto w-full max-w-3xl">
+<nav class="p-6 mx-auto w-full max-w-3xl z-10 relative">
   <div class="relative flex justify-between items-center ">
     <a href="/" class="text-blue-700" aria-label="John Antzoulis logo"><Icon  name="logo" size={70}  /></a>
     <div >
-      <button class="toggle  md:hidden">
+      <button class="toggle relative z-20 md:hidden">
         <span><Icon class="open-icon" name="menu" size={40} /></span>
         <span><Icon class="close-icon hidden" name="menu-close" size={40} /></span>
       </button>
@@ -21,14 +21,16 @@ import { Icon } from 'astro-icon/components';
 </nav>
 
 <script>
-  const button = document.querySelector(".toggle");
-  const menu = document.querySelector(".menu");
-  const openMenu = document.querySelector(".open-icon")
-  const closeMenu = document.querySelector(".close-icon")
-  button?.addEventListener('click', () => {
-    menu?.classList.toggle("hidden");
-    openMenu?.classList.toggle("hidden");
-    closeMenu?.classList.toggle("hidden");
+  document.addEventListener("astro:page-load", () => {
+    const button = document.querySelector(".toggle");
+    const menu = document.querySelector(".menu");
+    const openMenu = document.querySelector(".open-icon");
+    const closeMenu = document.querySelector(".close-icon");
 
+    button?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+      openMenu?.classList.toggle("hidden");
+      closeMenu?.classList.toggle("hidden");
+    });
   });
 </script>
