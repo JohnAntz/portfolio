@@ -12,8 +12,10 @@ const projects = await getCollection("projects")
 		<p class="text-blue-700 text-lg md:text-2xl">Hello, I'm</p>
 		<h1 class="text-4xl md:text-7xl">John Antzoulis</h1>
 		<p class=" text-sm md:text-xl">Full-stack web developer based in Spain</p>	
-		<div class="mt-2 flex">
-			<a href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-700 px-2 py-1 rounded-md text-sm font-bold md:text-xl md:px-4 md:py-2 md:rounded-lg hover:bg-blue-900 hover:scale-110 ease-in-out duration-100">View CV</a>
+		<div class="mt-2 flex gap-2 items-center">
+			<a href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-700 px-2 py-1 rounded-md text-sm font-bold md:text-xl md:px-4 md:py-2 md:rounded-lg hover:bg-blue-900 ease-in-out duration-100">View CV</a>
+			<p class="text-xs md:text-lg text-blue-500 animate-pulse">Open for work</p>
+			<p class="text-xs md:text-lg text-blue-500 animate-pulse">Willing to relocate</p>
 		</div>	
 	</section>
 	<section class="flex flex-col items-center">
@@ -41,10 +43,10 @@ const projects = await getCollection("projects")
 									))}
 								</div>
 								<div class="flex justify-around w-full mt-auto">
-									<a href={link} target="_blank" class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 hover:scale-110 ease-in-out duration-">
+									<a href={link} target="_blank" class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-">
 									Visit site <Icon name="link-icon" class="inline align-super" size={12}/>
 									</a>
-									<a href={`./projects/${id}`} class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 hover:scale-110 ease-in-out duration-100">More info <Icon name="link-icon" class="inline align-super" size={12}/></a>
+									<a href={`./projects/${id}`} class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-100">More info <Icon name="link-icon" class="inline align-super" size={12}/></a>
 								</div>
 								
                         	</div>
