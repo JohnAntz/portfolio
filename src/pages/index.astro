@@ -47,8 +47,8 @@ const projects = await getCollection("projects")
 									alt={title}
 									class="w-auto object-cover rounded-lg"
 									transition:name={`img-${id}`}
-									widths={[340, 680]}
-									sizes="(min-width: 768px) 276px, calc(100vw - 132px)"
+									width={350}
+									layout="constrained"
 								/>
 							    		<h3 class="text-xl">{title}</h3>
 					    		<p>{description}</p>

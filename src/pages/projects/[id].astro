@@ -27,8 +27,8 @@ const { Content } = await render(project)
                 alt={description}
                 class="w-xs md:w-xl rounded-2xl"
                 transition:name={`img-${id}`}
-                widths={[320, 640, 1152]}
-                sizes="(min-width: 768px) 576px, 320px"
+                width={576}
+                layout="constrained"
                 priority
             />
         </aside>
