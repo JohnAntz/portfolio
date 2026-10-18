@@ -16,6 +16,10 @@
   --tw-prose-td-borders: var(--color-slate-700);
 }
 
+html {
+  background-color: #000;
+}
+
 body {
   margin: 0;
   width: 100%;
