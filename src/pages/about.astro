@@ -1,7 +1,37 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+// import profile from "../assets/profile.jpg"; // change to your image path
 ---
 
-<Layout>
-    <h1>WORKING</h1>
+<Layout title="About - John Antzoulis">
+    <div class="flex flex-col gap-12 items-center">
+        <!-- <aside>
+            <Image
+                src={profile}
+                alt="Portrait of John Antzoulis"
+                class="w-xs md:w-xl rounded-2xl"
+                width={576}
+                layout="constrained"
+                priority
+            />
+        </aside> -->
+        <main class="flex flex-col items-center gap-6 w-xs md:w-2xl">
+            <h1 class="text-4xl md:text-7xl" >About me</h1>
+            <article class="prose prose-sm md:prose-lg prose-dark">
+                <p>
+                    Hi, I'm <strong>John Antzoulis</strong>, a 25-year-old developer eager to learn and contribute to the world of software.
+                </p>
+                <p>
+                    I started my programming journey at a young age, in <time datetime="2013-09-01">2013</time>, at that time I was using <a href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer">Scratch</a> as part of my school's computer science curriculum. The first ever project I finished was a complete clone of <a href="https://en.wikipedia.org/wiki/Space_Invaders" target="_blank" rel="noopener noreferrer">Space Invaders</a>, and it's probably one of my fondest memories.
+                </p>
+                <p>
+                    After Scratch I dipped my toes in web development only to soon after go all in with Python. It wasn't until <time datetime="2024-02-18">2024</time> that I started seriously learning about the web and got hooked by it.
+                </p>
+                <p>
+                    I'm currently pursuing my <strong>Higher Vocational Training in Web Application Development</strong> online studies at <a href="https://sites.google.com/iesalbarregas.es/home/inicio" target="_blank" rel="noopener noreferrer">IES Albarregas</a> and looking for job opportunities.
+                </p>
+            </article>
+        </main>
+    </div>
 </Layout>
