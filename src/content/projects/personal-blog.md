@@ -19,6 +19,6 @@ The blog is made with **Astro**. Using Astro's content collection to display mar
 
 ## Challenges and learning outcome
 
-The only thing I found difficult about the process was not related to astro itself, it was the deployment of the actual blog to github pages using **actions**.
+The only thing I found difficult about the process was not related to Astro itself, it was the deployment of the actual blog to github pages using **actions**.
 
 This project helped me understand github inner workings better and improving my markdown skills (before this I could barely format a Readme).

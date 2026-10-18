@@ -8,7 +8,7 @@ const projects = await getCollection("projects")
 
 ---
 
-<Layout title="Home - John Antzoulis">
+<Layout title="Home - John Antzoulis" description="Portfolio of John Antzoulis, a full-stack web developer based in Spain. Explore my selected projects and tech stack, and get in touch.">
 <main class="mx-auto w-full max-w-3xl px-6 py-6 gap-10 flex flex-col items-center">
 	<section class="hero">
 		<p class="text-blue-700 text-lg md:text-2xl">Hello, I'm</p>
@@ -19,7 +19,7 @@ const projects = await getCollection("projects")
 			<p class="text-xs md:text-lg text-blue-500 animate-pulse">Willing to relocate</p>
 		</div>
 		<div class="mt-3 flex gap-3 md:gap-6 items-center">
-			<a aria-label="Curriculum redirect button" href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-700 px-2 py-1 rounded-md text-sm md:text-xl md:px-4 md:py-2 md:rounded-lg hover:bg-blue-900 ease-in-out duration-100">View CV</a>
+			<a aria-label="Curriculum redirect button" href="/CV.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-700 px-2 py-1 rounded-md text-white text-sm md:text-xl md:px-4 md:py-2 md:rounded-lg hover:bg-blue-900 ease-in-out duration-100">View CV</a>
 			<a aria-label="Github profile redirect button" href="https://github.com/JohnAntz" target="_blank" rel="noopener noreferrer" class="  hover:text-blue-900 ease-in-out duration-100"><Icon name="github" class="size-7 md:size-11"/></a>
 			<a aria-label="Codeberg profile redirect button"  href="https://codeberg.org/JohnAntz" target="_blank" rel="noopener noreferrer" class="  hover:text-blue-900 ease-in-out duration-100"><Icon name="codeberg" class="size-7 md:size-11"/></a>
 			<a aria-label="Linkedin profile redirect button" href="https://www.linkedin.com/in/john-antzoulis-657a413aa/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BuwJdq2hXT2i7qy8VQIDtAQ%3D%3D" target="_blank" rel="noopener noreferrer" class="  hover:text-blue-900 ease-in-out duration-100"><Icon name="linkedin" class="size-7 md:size-11"/></a>
@@ -50,7 +50,7 @@ const projects = await getCollection("projects")
 									width={350}
 									layout="constrained"
 								/>
-							    		<h3 class="text-xl">{title}</h3>
+							    		<h2 class="text-xl">{title}</h2>
 					    		<p>{description}</p>
 								<div class="flex items-center gap-3">
  									 {technologies.map((technology) => (
@@ -63,10 +63,10 @@ const projects = await getCollection("projects")
 									))}
 								</div>
 								<div class="flex justify-around w-full mt-auto">
-									<a href={link} target="_blank" class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-">
+									<a href={link} target="_blank" class="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-">
 									Visit site <Icon name="link-icon" class="inline align-super" size={12}/>
 									</a>
-									<a href={`./projects/${id}`} class="bg-blue-600 px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-100">More info <Icon name="link-icon" class="inline align-super" size={12}/></a>
+									<a href={`./projects/${id}`} class="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold hover:bg-blue-900 ease-in-out duration-100">More info <Icon name="link-icon" class="inline align-super" size={12}/></a>
 								</div>
 								
                         	</div>
