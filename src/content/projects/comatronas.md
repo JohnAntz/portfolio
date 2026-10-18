@@ -1,7 +1,7 @@
 ---
 title: Comatronas
 description: Personal web of midwives Juani and Luciano.
-img: "/img/comatronas.png"
+img: "../../assets/projects/comatronas.png"
 link: https://comatronas.es/
 technologies:
   - wordpress

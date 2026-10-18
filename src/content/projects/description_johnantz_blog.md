@@ -1,7 +1,7 @@
 ---
 title: Personal blog
 description: Space to share my programming and everyday technology user experience with the world.
-img: "/img/johns-blog.png"
+img: "../../assets/projects/johns-blog.png"
 link: https://blog.johnantz.dev/
 technologies:
   - astro
