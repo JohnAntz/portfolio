@@ -1,0 +1,85 @@
+---
+const accessKey = "4333fa81-c7d9-4364-9f5a-14cce978912b";
+const inputClass =
+  "w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-slate-200 focus:border-blue-600 focus:outline-none";
+---
+<article class="bg-linear-to-r from-blue-700 from-15% via-transparent via-50% to-transparent to-85% rounded-3xl p-0.5 shadow-[0_0_10px_4px_#1447e6]/30 max-w-sm w-full ">
+  <div class="bg-slate-950 p-5 h-full gap-3 rounded-[calc(1.5rem_-_0.125rem)] flex flex-col items-start justify-center">
+    
+    <p>Have a question or an opportunity? Send me a message.</p>
+    <form id="contact-form" class="flex w-full flex-col gap-4">
+  <input type="hidden" name="access_key" value={accessKey} />
+  <input type="hidden" name="subject" value="New message from johnantz.dev" />
+  <input type="hidden" name="from_name" value="Portfolio contact form" />
+  <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+
+  <label class="flex flex-col gap-1">
+    <span>Name</span>
+    <input type="text" name="name" required autocomplete="name" class={inputClass} />
+  </label>
+
+  <label class="flex flex-col gap-1">
+    <span>Email</span>
+    <input type="email" name="email" required autocomplete="email" class={inputClass} />
+  </label>
+
+  <label class="flex flex-col gap-1">
+    <span>Message</span>
+    <textarea name="message" rows="5" required class={inputClass}></textarea>
+  </label>
+
+  <button
+    type="submit"
+    id="contact-submit"
+    class="rounded-lg bg-blue-700 px-4 py-2 font-bold ease-in-out duration-100 hover:bg-blue-900 disabled:opacity-60"
+  >
+    Send message
+  </button>
+
+  <p id="contact-status" role="status" class="min-h-6 text-sm"></p>
+</form>
+  </div>
+</article>
+
+
+
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    const button = document.getElementById("contact-submit") as HTMLButtonElement | null;
+    const status = document.getElementById("contact-status");
+    if (!form || !button || !status) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "";
+      status.classList.remove("text-green-400", "text-red-400");
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          status.textContent = "Message sent! I'll get back to you soon.";
+          status.classList.add("text-green-400");
+          form.reset();
+        } else {
+          throw new Error(data.message);
+        }
+      } catch {
+        status.textContent = "Something went wrong. Please try again or email contact@johnantz.dev.";
+        status.classList.add("text-red-400");
+      } finally {
+        button.disabled = false;
+        button.textContent = "Send message";
+      }
+    });
+  });
+</script>
