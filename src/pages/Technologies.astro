@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+
+const techStack = [
+  { name: "HTML", icon: "html", category: "front" },
+  { name: "CSS", icon: "css", category: "front" },
+  { name: "TypeScript", icon: "typescript", category: "lang" },
+  { name: "React", icon: "react", category: "framework" },
+  { name: "Node.js", icon: "node", category: "back" },
+  { name: "PostgreSQL", icon: "postgres", category: "back" },
+  { name: "MySQL", icon: "mysql", category: "back" },
+  { name: "Npm", icon: "npm", category: "misc" },
+  { name: "Tailwind", icon: "tailwind", category: "framework" },
+  { name: "Wordpress", icon: "wordpress", category: "misc" },
+  { name: "JavaScript", icon: "javascript", category: "lang" },
+  { name: "Java", icon: "java", category: "lang" },
+  { name: "Express.js", icon: "express", category: "framework" },
+  { name: "Astro", icon: "astro", category: "framework" },
+  { name: "Bash", icon: "bash", category: "misc" },
+];
+
+const categories = [
+  { key: "lang", label: "Languages" },
+  { key: "front", label: "Frontend" },
+  { key: "framework", label: "Frameworks" },
+  { key: "back", label: "Backend & databases" },
+  { key: "misc", label: "Tools & other" },
+];
+
+const grouped = categories
+  .map(({ key, label }) => ({
+    label,
+    items: techStack.filter((tech) => tech.category === key),
+  }))
+  .filter(({ items }) => items.length > 0);
+---
+
+<Layout title="Technologies - John Antzoulis" description="Learn about all the different technologies John Antzoulis uses as a full-stack web developer and Linux enthusiast.">
+    <main class="mx-auto w-full max-w-3xl px-6 py-6 flex flex-col items-center gap-6 md:gap-10">
+        <h1 class="text-4xl md:text-7xl">Tech-stack</h1>
+        <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+            {grouped.map(({ label, items }) => (
+                <article class="bg-linear-to-r from-blue-700 from-15% via-transparent via-50% to-transparent to-85% rounded-3xl p-0.5 shadow-[0_0_10px_4px_#1447e6]/30 max-w-sm w-full md:odd:last:col-span-2">
+                    <div class="bg-slate-950 p-5 h-full gap-4 rounded-[calc(1.5rem_-_0.125rem)] flex flex-col items-center justify-start">
+                        <h2 class="text-xl">{label}</h2>
+                        <ul class="grid w-full grid-cols-3 gap-4 justify-items-center">
+                            {items.map((tech) => (
+                                <li class="flex flex-col items-center gap-1 text-center">
+                                    <Icon name={tech.icon} title={tech.name} class="size-10 md:size-12" />
+                                    <span class="text-sm">{tech.name}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </main>
+</Layout>
